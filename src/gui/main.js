@@ -70,7 +70,13 @@ app.whenReady().then(async () => {
 
 // Add IPC handlers for setup operations
 ipcMain.handle('check-system', async () => {
-  // Implement system checks
+  try {
+    const { performHealthCheck } = require('../api/health');
+    const status = await performHealthCheck();
+    return status;
+  } catch (error) {
+    throw new Error(`System check failed: ${error.message}`);
+  }
 });
 
 ipcMain.handle('setup-directories', async () => {
