@@ -1,0 +1,54 @@
+{
+  "name": "financial-analysis",
+  "version": "1.0.0",
+  "description": "A comprehensive automated financial program with AI-powered features and financial analysis capabilities.",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "test": "jest",
+    "build": "tsc",
+    "setup": "ts-node scripts/setup.ts",
+    "postinstall": "npm run setup"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "scikit-learn": "^0.24.2",
+    "tensorflow": "^2.4.0",
+    "axios": "^0.21.1",
+    "pdfkit": "^0.13.0",
+    "dotenv": "^16.0.3",
+    "xlsx": "^0.18.5",
+    "@tensorflow/tfjs": "^4.10.0",
+    "supertest": "^6.3.3",
+    "@mui/material": "^5.14.0",
+    "@mui/icons-material": "^5.14.0",
+    "@mui/x-data-grid": "^6.10.0",
+    "googleapis": "^120.0.0",
+    "chart.js": "^4.3.0",
+    "react-chartjs-2": "^5.2.0",
+    "cross-env": "^7.0.3",
+    "mkdirp": "^1.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4",
+    "ts-node": "^10.0.0",
+    "jest": "^26.6.3",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^14.14.31",
+    "@types/pdfkit": "^0.12.10",
+    "@types/supertest": "^2.0.12"
+  },
+  "keywords": [
+    "financial",
+    "automation",
+    "AI",
+    "analysis"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ]
+}

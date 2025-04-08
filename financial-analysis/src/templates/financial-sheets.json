@@ -1,0 +1,35 @@
+{
+  "sheets": [
+    {
+      "name": "Balance Sheet",
+      "headers": [
+        "Assets", "Amount", "Liabilities", "Amount",
+        "Current Assets", "", "Current Liabilities", "",
+        "Non-Current Assets", "", "Non-Current Liabilities", "",
+        "", "", "Equity", ""
+      ],
+      "formulas": {
+        "totalAssets": "=SUM(B5:B10)",
+        "totalLiabilities": "=SUM(D5:D10)",
+        "totalEquity": "=B11-D11"
+      }
+    },
+    {
+      "name": "Income Statement",
+      "headers": [
+        "Revenue", "Amount",
+        "Cost of Sales", "",
+        "Gross Profit", "",
+        "Operating Expenses", "",
+        "Operating Income", "",
+        "Other Income/Expenses", "",
+        "Net Income", ""
+      ],
+      "formulas": {
+        "grossProfit": "=B2-B3",
+        "operatingIncome": "=B5-B7",
+        "netIncome": "=B8+B9"
+      }
+    }
+  ]
+}
