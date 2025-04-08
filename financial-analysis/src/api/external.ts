@@ -33,13 +33,18 @@ export class ExternalAPIService {
         this.checkRateLimit(endpoint);
 
         try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), this.config.timeout);
+
             const response = await fetch(`${this.config.baseUrl}${endpoint}`, {
                 headers: {
                     'Authorization': `Bearer ${this.config.apiKey}`,
                     'Content-Type': 'application/json'
                 },
-                timeout: this.config.timeout
+                signal: controller.signal
             });
+
+            clearTimeout(timeoutId);
 
             if (!response.ok) {
                 throw new FinancialError(
