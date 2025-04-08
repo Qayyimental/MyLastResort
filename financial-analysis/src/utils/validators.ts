@@ -16,4 +16,18 @@ function validateDate(dateString: string): boolean {
     return !isNaN(date.getTime());
 }
 
-export { validateRequiredFields, validateNumber, validateDate };
+function validateInput<T extends Record<string, any>>(data: T, requiredFields: (keyof T)[]): boolean {
+    return requiredFields.every(field => !!data[field]);
+}
+
+function validateAmount(value: number): boolean {
+    return typeof value === 'number' && !isNaN(value) && value > 0;
+}
+
+export {
+    validateRequiredFields,
+    validateNumber,
+    validateDate,
+    validateInput,
+    validateAmount
+};
